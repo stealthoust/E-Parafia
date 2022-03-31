@@ -1,11 +1,14 @@
 package edu.pwste;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
 
 import java.io.IOException;
 
 public class Formularz {
 
+    public TableView table_view;
+    //String loudScreaming = json.getJSONObject("LabelData").getString("slogan");
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
