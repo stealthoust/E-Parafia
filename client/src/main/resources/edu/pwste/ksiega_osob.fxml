@@ -52,11 +52,11 @@
       <TableView fx:id="table_view" layoutX="14.0" layoutY="140.0" prefHeight="250.0" prefWidth="600.0">
          <columns>
             <TableColumn fx:id="col_id" prefWidth="60.0" text="ID" />
-            <TableColumn fx:id="col_imie" prefWidth="90.0" text="Imię" />
-            <TableColumn fx:id="col_nazwisko" prefWidth="127.0" text="Nazwisko" />
-            <TableColumn fx:id="col_data" prefWidth="114.0" text="Data urodzenia" />
-            <TableColumn fx:id="col_miejscowosc" prefWidth="131.0" text="Miejscowość" />
-            <TableColumn fx:id="col_id_ksiedza" minWidth="5.0" prefWidth="77.0" text="ID księdza" />
+            <TableColumn fx:id="col_imie" text="Imię" />
+            <TableColumn fx:id="col_nazwisko" prefWidth="97.0" text="Nazwisko" />
+            <TableColumn fx:id="col_data" prefWidth="116.0" text="Data urodzenia" />
+            <TableColumn fx:id="col_miejscowosc" prefWidth="121.0" text="Miejscowość" />
+            <TableColumn fx:id="col_id_ksiedza" minWidth="5.0" prefWidth="125.0" text="Ksiądz" />
          </columns></TableView>
    </children>
 </AnchorPane>

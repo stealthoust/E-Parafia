@@ -3,6 +3,16 @@ package edu.pwste;
 import java.util.Date;
 
 public class Osoba {
+
+    public int id;
+    public String imie;
+    public String nazwisko;
+    public String data_urodzenia;
+    public String miejscowosc;
+    public String ksiadz;
+    public int id_ksiedza;
+
+
     public int getId() {
         return id;
     }
@@ -27,11 +37,11 @@ public class Osoba {
         this.nazwisko = nazwisko;
     }
 
-    public Date getData_urodzenia() {
+    public String getData_urodzenia() {
         return data_urodzenia;
     }
 
-    public void setData_urodzenia(Date data_urodzenia) {
+    public void setData_urodzenia(String data_urodzenia) {
         this.data_urodzenia = data_urodzenia;
     }
 
@@ -51,11 +61,12 @@ public class Osoba {
         this.id_ksiedza = id_ksiedza;
     }
 
-    public int id;
-    public String imie;
-    public String nazwisko;
-    public Date data_urodzenia;
-    public String miejscowosc;
-    public int id_ksiedza;
+    public String getKsiadz() {
+        return ksiadz;
+    }
+
+    public void setKsiadz(String ksiadz) {
+        this.ksiadz = ksiadz;
+    }
 
 }

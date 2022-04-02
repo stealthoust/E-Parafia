@@ -64,7 +64,7 @@ public class KsiegaOsob implements Initializable {
         col_nazwisko.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
         col_data.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia"));
         col_miejscowosc.setCellValueFactory(new PropertyValueFactory<>("miejscowosc"));
-        col_id_ksiedza.setCellValueFactory(new PropertyValueFactory<>("id_ksiedza"));
+        col_id_ksiedza.setCellValueFactory(new PropertyValueFactory<>("ksiadz"));
     }
 
     private void tableViewPopulate()
