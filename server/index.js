@@ -4,10 +4,10 @@ const port = 3000
 const mysql = require("mysql");
 
 const conn = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "parafia",
+  host: "sql11.freemysqlhosting.net",
+  user: "sql11483393",
+  password: "rM1fKsgC1K",
+  database: "sql11483393",
 });
 
 
