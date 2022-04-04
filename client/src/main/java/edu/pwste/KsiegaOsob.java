@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -22,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class KsiegaOsob implements Initializable {
 
     public TableView table_view=new TableView();
+    public MenuButton mszaBtn;
     @FXML
     TableColumn <Osoba,Integer> col_id;
     @FXML
@@ -93,10 +95,12 @@ public class KsiegaOsob implements Initializable {
     }
     @FXML
     private void switchToMszaDodaj() throws IOException {
+        mszaBtn.hide();
         App.setRoot("msza_dodaj");
     }
     @FXML
     private void switchToMszaInfo() throws IOException {
+        mszaBtn.hide();
         App.setRoot("msza_info");
     }
 

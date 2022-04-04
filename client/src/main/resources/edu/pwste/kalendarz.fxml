@@ -49,7 +49,7 @@
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <MenuButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Msza" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <MenuButton fx:id="mszaBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Msza" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#switchToMszaInfo" text="Informacje dotyczące mszy" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToMszaDodaj" text="Przypisz księdza do mszy" />
