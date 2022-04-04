@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.KsiegaOsob">
+   <children>
+      <Label alignment="CENTER" layoutX="217.0" layoutY="87.0" text="Księga osób">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="15.0" layoutY="24.0" prefHeight="52.0" prefWidth="600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="158.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
+         </columnConstraints>
+         <children>
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="60.0" prefWidth="147.0" text="Strona Główna" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKalendarz" prefHeight="60.0" prefWidth="147.0" text="Kalendarz" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKsiegaOsob" prefHeight="60.0" prefWidth="147.0" text="Księga osób" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <SplitMenuButton alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToFormularz" prefHeight="60.0" prefWidth="123.0" text="Formularze" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
+            </SplitMenuButton>
+            <SplitMenuButton alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="60.0" prefWidth="117.0" styleClass="split-menu-btn, split-menu-btn-Ig, split-menu-btn-primary'" text="Msza" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#switchToMszaInfo" text="Informacje dotyczące mszy" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToMszaDodaj" text="Przypisz księdza do mszy" />
+               </items>
+            </SplitMenuButton>
+         </children>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <TableView fx:id="table_view" layoutX="14.0" layoutY="140.0" prefHeight="250.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="col_id" prefWidth="60.0" text="ID" />
+            <TableColumn fx:id="col_imie" text="Imię" />
+            <TableColumn fx:id="col_nazwisko" prefWidth="97.0" text="Nazwisko" />
+            <TableColumn fx:id="col_data" prefWidth="116.0" text="Data urodzenia" />
+            <TableColumn fx:id="col_miejscowosc" prefWidth="121.0" text="Miejscowość" />
+            <TableColumn fx:id="col_id_ksiedza" minWidth="5.0" prefWidth="125.0" text="Ksiądz" />
+         </columns></TableView>
+   </children>
+</AnchorPane>
