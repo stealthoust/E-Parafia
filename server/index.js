@@ -4,7 +4,6 @@ const port = 3000
 const osobyRouter = require("./routes/osoby");
 
 
-
 app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });

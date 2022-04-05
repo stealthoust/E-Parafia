@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.PrimaryController">
    <children>
-      <GridPane layoutX="5.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="158.0" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
-        </columnConstraints>
-
+      <TableView layoutX="371.0" layoutY="82.0" prefHeight="306.0" prefWidth="215.0" />
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="158.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
+         </columnConstraints>
          <children>
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="60.0" prefWidth="147.0" text="Strona Główna" textAlignment="CENTER" GridPane.rowIndex="1" />
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKalendarz" prefHeight="60.0" prefWidth="147.0" text="Kalendarz" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKsiegaOsob" prefHeight="60.0" prefWidth="147.0" text="Księga osób" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <SplitMenuButton alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToFormularz" prefHeight="60.0" prefWidth="123.0" text="Formularze" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </SplitMenuButton>
-            <SplitMenuButton alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="60.0" prefWidth="117.0" styleClass="split-menu-btn, split-menu-btn-Ig, split-menu-btn-primary'" text="Msza" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#switchToMszaInfo" text="Informacje dotyczące mszy" />
-                <MenuItem mnemonicParsing="false" onAction="#switchToMszaDodaj" text="Przypisz księdza do mszy" />
-              </items>
-            </SplitMenuButton>
+            <MenuButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Formularz" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="mszaBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Msza" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#switchToMszaInfo" text="Informacje dotyczące mszy" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToMszaDodaj" text="Przypisz księdza do mszy" />
+               </items>
+            </MenuButton>
          </children>
          <rowConstraints>
             <RowConstraints />
             <RowConstraints />
          </rowConstraints>
       </GridPane>
-      <TableView layoutX="371.0" layoutY="82.0" prefHeight="306.0" prefWidth="215.0" />
    </children>
    
 </AnchorPane>

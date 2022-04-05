@@ -1,10 +1,13 @@
 package edu.pwste;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuButton;
 
 import java.io.IOException;
 
 public class MszaDodaj {
+    public MenuButton mszaBtn;
+
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
@@ -23,10 +26,12 @@ public class MszaDodaj {
     }
     @FXML
     private void switchToMszaDodaj() throws IOException {
+        mszaBtn.hide();
         App.setRoot("msza_dodaj");
     }
     @FXML
     private void switchToMszaInfo() throws IOException {
+        mszaBtn.hide();
         App.setRoot("msza_info");
     }
 }
