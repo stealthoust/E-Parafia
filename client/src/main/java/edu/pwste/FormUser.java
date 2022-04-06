@@ -1,12 +1,18 @@
 package edu.pwste;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
-public class MszaDodaj {
+public class FormUser {
+
+    public TableView table_view;
     public MenuButton mszaBtn;
+    public TextField txtName,txtNazwisko,txtMiejscowosc;
+    public DatePicker dateDob;
+    public ComboBox comboKsiadz;
+    public Button btnZatwierdz;
     public MenuButton formularzBtn;
 
     @FXML

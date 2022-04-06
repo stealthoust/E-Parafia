@@ -2,23 +2,28 @@ package edu.pwste;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.TableView;
 
 import java.io.IOException;
 
-public class Formularz {
+public class MszaEvent {
 
-    public TableView table_view;
+
     public MenuButton mszaBtn;
+    public MenuButton formularzBtn;
 
-    //String loudScreaming = json.getJSONObject("LabelData").getString("slogan");
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
     @FXML
-    private void switchToFormularz() throws IOException {
-        App.setRoot("formularz");
+    private void switchToFormularzUser() throws IOException {
+        formularzBtn.hide();
+        App.setRoot("formUser");
+    }
+    @FXML
+    private void switchToFormularzEvent() throws IOException {
+        formularzBtn.hide();
+        App.setRoot("formEvent");
     }
     @FXML
     private void switchToKalendarz() throws IOException {
@@ -27,6 +32,11 @@ public class Formularz {
     @FXML
     private void switchToKsiegaOsob() throws IOException {
         App.setRoot("ksiega_osob");
+    }
+    @FXML
+    private void switchToMszaEvent() throws IOException {
+        mszaBtn.hide();
+        App.setRoot("MszaEvent");
     }
     @FXML
     private void switchToMszaDodaj() throws IOException {

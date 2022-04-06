@@ -5,7 +5,10 @@ import javafx.scene.control.MenuButton;
 
 import java.io.IOException;
 
-public class MszaDodaj {
+public class FormEvent {
+
+
+
     public MenuButton mszaBtn;
     public MenuButton formularzBtn;
 
