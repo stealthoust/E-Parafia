@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaInfo">
+<AnchorPane prefHeight="472.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormEvent">
    <children>
-      <DatePicker layoutX="16.0" layoutY="92.0" prefHeight="30.0" prefWidth="294.0" promptText="Wybierz datę" />
-      <ComboBox layoutX="336.0" layoutY="92.0" prefHeight="30.0" prefWidth="277.0" promptText="Wybierz mszę" />
-      <TableView layoutX="16.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
-      <TableView layoutX="269.0" layoutY="166.0" prefHeight="200.0" prefWidth="337.0" />
-      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
+      <GridPane layoutX="15.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="158.0" />
@@ -48,5 +44,37 @@
             <RowConstraints />
          </rowConstraints>
       </GridPane>
+      <TextField fx:id="txtNazwa" alignment="CENTER" layoutX="15.0" layoutY="134.0" prefHeight="32.0" prefWidth="600.0" promptText="Podaj nazwę wydarzenia">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="15.0" layoutY="94.0" prefHeight="32.0" prefWidth="600.0" text="Nazwa">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTyp" alignment="CENTER" layoutX="15.0" layoutY="240.0" prefHeight="32.0" prefWidth="600.0" promptText="Podaj typ wydarzenia">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="15.0" layoutY="200.0" prefHeight="32.0" prefWidth="600.0" text="Typ">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="15.0" layoutY="298.0" prefHeight="32.0" prefWidth="600.0" text="Opis">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOpis" alignment="CENTER" layoutX="15.0" layoutY="339.0" prefHeight="32.0" prefWidth="600.0" promptText="Podaj opis wydarzenia">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="addBtn" layoutX="15.0" layoutY="426.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="600.0" text="Dodaj" />
+      <Button fx:id="clearBtn" layoutX="15.0" layoutY="386.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="600.0" text="Wyczyść" />
    </children>
 </AnchorPane>
