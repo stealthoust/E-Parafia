@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -12,10 +13,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.Kalendarz">
+<AnchorPane prefHeight="400.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.Kalendarz">
    <children>
-      <TableView layoutX="14.0" layoutY="181.0" prefHeight="204.0" prefWidth="600.0" />
-      <DatePicker fx:id="datePicker" layoutX="10.0" layoutY="93.0" prefHeight="26.0" prefWidth="302.0" promptText="Wybierz datę" />
+      <TableView fx:id="wydarzenia_tabela" layoutX="14.0" layoutY="181.0" prefHeight="204.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="colGodzina" prefWidth="97.0" text="Godzina" />
+            <TableColumn fx:id="colNazwa" prefWidth="180.0" text="Nazwa" />
+            <TableColumn fx:id="colTyp" minWidth="0.0" prefWidth="134.0" text="Typ" />
+            <TableColumn fx:id="colOpis" prefWidth="175.0" text="Opis" />
+         </columns></TableView>
+      <DatePicker fx:id="datePicker" layoutX="10.0" layoutY="93.0" onAction="#wypiszWydarzenia" prefHeight="26.0" prefWidth="302.0" promptText="Wybierz datę" />
       <Pane layoutX="14.0" layoutY="127.0" prefHeight="39.0" prefWidth="98.0">
          <children>
             <Label alignment="CENTER" prefHeight="39.0" prefWidth="98.0" text="dzień" />
