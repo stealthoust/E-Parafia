@@ -50,10 +50,26 @@ async function addWydarzenie(nazwa,typ,opis){
     return {message};
 }
 
+async function addWydarzenieMsza(msza_id,wydarzenie_id){
+
+    const result = await db.query(
+        'INSERT INTO msza_wydarzenia (msza,wydarzenia) VALUES ('+msza_id+','+wydarzenie_id+');'
+    )
+
+    let message = 'Błąd podczas przypisywania wydarzenia do mszy';
+
+    if (result.affectedRows) {
+        message = 'Wydarzenie pomyślnie przypisane';
+    }
+
+    return {message};
+}
+
 module.exports = {
     getZakresKalendarz,
     getWydarzeniaKalendarz,
     getMszeToday,
     getWydarzeniaMsza,
-    addWydarzenie
+    addWydarzenie,
+    addWydarzenieMsza
 }

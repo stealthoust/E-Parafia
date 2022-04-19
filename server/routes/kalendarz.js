@@ -53,4 +53,18 @@ router.post('/addwydarzenie/:n/:t/:o', async function (req, res,next) {
     }
 
 });
+
+router.post('/addwydarzeniemsza/:idm/:idw', async function (req, res,next) {
+
+
+    try {
+
+        res.json(await kalendarz.addWydarzenieMsza(req.params.idm, req.params.idw));
+
+    } catch (err) {
+        console.error(`Coś poszło nie tak `, err.message);
+
+    }
+
+});
 module.exports = router;
