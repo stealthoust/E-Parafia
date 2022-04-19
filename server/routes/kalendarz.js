@@ -31,4 +31,26 @@ router.get('/mszedzis/:year/:month/:day', async function(req, res, next) {
     }
 });
 
+router.get('/wydarzeniamsza/:id', async function(req, res, next) {
+    try {
+        res.json(await kalendarz.getWydarzeniaMsza(req.params.id));
+    } catch (err) {
+        console.error(`Error while getting programming languages `, err.message);
+        next(err);
+    }
+});
+
+router.post('/addwydarzenie/:n/:t/:o', async function (req, res,next) {
+
+
+    try {
+
+        res.json(await kalendarz.addWydarzenie(req.params.n, req.params.t, req.params.o));
+
+    } catch (err) {
+        console.error(`Coś poszło nie tak `, err.message);
+
+    }
+
+});
 module.exports = router;

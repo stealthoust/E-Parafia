@@ -26,9 +26,34 @@ async function getMszeToday(day, month, year){
     return rows;
 }
 
+async function getWydarzeniaMsza(id){
+
+    const rows = await db.query(
+        "SELECT msza.godzina,wydarzenia.nazwa, wydarzenia.typ, wydarzenia.opis FROM `msza_wydarzenia` " +
+        "join msza on msza_wydarzenia.msza=msza.id join wydarzenia on wydarzenia.id=msza_wydarzenia.wydarzenia where msza.id="+id+";"
+    );
+    return rows;
+}
+
+async function addWydarzenie(nazwa,typ,opis){
+
+    const result = await db.query(
+        'INSERT INTO wydarzenia (id,nazwa,typ,opis) VALUES (null,"'+nazwa+'","'+typ+'","'+opis+'");'
+    )
+
+    let message = 'Błąd podczas dodawania wydarzenia';
+
+    if (result.affectedRows) {
+        message = 'Wydarzenie pomyślnie dodane';
+    }
+
+    return {message};
+}
 
 module.exports = {
     getZakresKalendarz,
     getWydarzeniaKalendarz,
-    getMszeToday
+    getMszeToday,
+    getWydarzeniaMsza,
+    addWydarzenie
 }
