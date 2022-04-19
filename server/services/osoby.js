@@ -12,6 +12,22 @@ async function getOsoby(){
     return rows;
 }
 
+async function addOsoba(imie, nazwisko, data_urodzenia, miejscowosc, id_ksiedza){
+
+    const result = await db.query(
+        'INSERT INTO osoby (imie, nazwisko, data_urodzenia, miejscowosc, id_ksiedza) VALUES ("'+imie+'","'+nazwisko+'","'+data_urodzenia+'","'+miejscowosc+'",'+id_ksiedza+');'
+    )
+
+    let message = 'Błąd podczas dodawania osoby';
+
+    if (result.affectedRows) {
+        message = 'Osoba pomyślnie dodana';
+    }
+
+    return {message};
+}
+
 module.exports = {
-    getOsoby
+    getOsoby,
+    addOsoba
 }
