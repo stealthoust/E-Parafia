@@ -22,5 +22,13 @@ router.get('/wydarzenia/:year/:month/:day', async function(req, res, next) {
     }
 });
 
+router.get('/mszedzis/:year/:month/:day', async function(req, res, next) {
+    try {
+        res.json(await kalendarz.getMszeToday(req.params.day, req.params.month, req.params.year));
+    } catch (err) {
+        console.error(`Error while getting programming languages `, err.message);
+        next(err);
+    }
+});
 
 module.exports = router;

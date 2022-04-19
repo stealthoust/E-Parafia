@@ -12,14 +12,23 @@ async function getZakresKalendarz(){
 async function getWydarzeniaKalendarz(day, month, year){
 
     const rows = await db.query(
-        "(SELECT msza.godzina,wydarzenia.nazwa, wydarzenia.typ, wydarzenia.opis FROM `msza_wydarzenia` join msza on msza_wydarzenia.msza=msza.id join wydarzenia on wydarzenia.id=msza_wydarzenia.wydarzenia where msza.data='"+year+"-"+month+"-"+day+"');"
+        "(SELECT msza.godzina,wydarzenia.nazwa, wydarzenia.typ, wydarzenia.opis FROM `msza_wydarzenia` join msza on msza_wydarzenia.msza=msza.id" +
+        " join wydarzenia on wydarzenia.id=msza_wydarzenia.wydarzenia where msza.data='"+year+"-"+month+"-"+day+"');"
+    );
+    return rows;
+}
+
+async function getMszeToday(day, month, year){
+
+    const rows = await db.query(
+        "(SELECT * FROM msza WHERE DAY(data)="+day+" AND MONTH(data)="+month+" AND YEAR(data)="+year+")"
     );
     return rows;
 }
 
 
-
 module.exports = {
     getZakresKalendarz,
-    getWydarzeniaKalendarz
+    getWydarzeniaKalendarz,
+    getMszeToday
 }
