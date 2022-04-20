@@ -13,14 +13,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormUser">
+<AnchorPane prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormUser">
    <children>
       <TextField fx:id="txtName" layoutX="107.0" layoutY="139.0" promptText="Podaj imię" />
       <TextField fx:id="txtNazwisko" layoutX="332.0" layoutY="139.0" promptText="Podaj nazwisko" />
       <DatePicker fx:id="dateDob" layoutX="79.0" layoutY="251.0" prefHeight="26.0" prefWidth="191.0" promptText="Podaj datę urodzenia" />
       <TextField fx:id="txtMiejscowosc" layoutX="332.0" layoutY="251.0" promptText="Podaj miejscowość" />
       <ComboBox fx:id="comboKsiadz" layoutX="79.0" layoutY="350.0" prefHeight="27.0" prefWidth="191.0" promptText="Wybierdz księdza" />
-      <Button fx:id="btnZatwierdz" layoutX="332.0" layoutY="343.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="152.0" text="Zatwierdź">
+      <Button fx:id="btnZatwierdz" layoutX="332.0" layoutY="343.0" mnemonicParsing="false" onAction="#userDodaj" prefHeight="41.0" prefWidth="152.0" text="Zatwierdź">
          <font>
             <Font name="Courier New" size="16.0" />
          </font>
