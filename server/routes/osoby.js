@@ -14,7 +14,7 @@ router.get('/', async function(req, res, next) {
 
 router.post('/add', async function(req, res, next) {
     try {
-        res.json(await osoby.getOsoby());
+        res.json(await osoby.addOsoba(req.body.imie, req.body.nazwisko, req.body.dt_urodzenia, req.body.miejscowosc, req.body.id_ksiedza));
     } catch (err) {
         console.error(`Error while getting programming languages `, err.message);
         next(err);
