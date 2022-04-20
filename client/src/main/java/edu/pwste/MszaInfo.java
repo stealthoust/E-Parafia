@@ -3,9 +3,11 @@ package edu.pwste;
 import com.google.gson.Gson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URI;
@@ -29,10 +31,38 @@ public class MszaInfo implements Initializable {
     @FXML
     public TableView ksiadzTabela=new TableView();
 
+    @FXML
+    private TableColumn<ksiadz, String> colImie;
+
+    @FXML
+    private TableColumn<ksiadz, String> colNazwisko;
+
+    @FXML
+    private TableColumn<wydarzenia, String> colGodzina;
+
+    @FXML
+    private TableColumn<wydarzenia, String> colNazwa;
+
+    @FXML
+    private TableColumn<wydarzenia, String> colTyp;
+
+    @FXML
+    private TableColumn<wydarzenia, String> colOpis;
+
     public String url = "http://localhost:3000/kalendarz/zakresDat";
     private ObservableList<msze> lista;
 
     public MszaInfo() throws Exception {
+    }
+
+    private void tableViewSetup() {
+        colGodzina.setCellValueFactory(new PropertyValueFactory<>("godzina"));
+        colNazwa.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
+        colTyp.setCellValueFactory(new PropertyValueFactory<>("typ"));
+        colOpis.setCellValueFactory(new PropertyValueFactory<>("opis"));
+
+        colImie.setCellValueFactory(new PropertyValueFactory<>("imie"));
+        colNazwisko.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
     }
 
     public ZakresDat[] pobierzDane() throws Exception
@@ -67,6 +97,29 @@ public class MszaInfo implements Initializable {
         return lista;
     }
 
+    public ObservableList<ksiadz> pobierzKsiezy(String link) throws IOException, InterruptedException {
+        Gson gson = new Gson();
+        var client = HttpClient.newHttpClient();
+
+        var request = HttpRequest.newBuilder(URI.create(link)).build();
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        String odpowiedz = response.body();
+        ksiadz[] enums = gson.fromJson(odpowiedz,ksiadz[].class);
+        ObservableList<ksiadz> lista = FXCollections.observableArrayList(enums);
+
+        return lista;
+    }
+
+    private void tableViewPopulate(String linkW,String linkK) throws Exception {
+        Kalendarz kalendarz = new Kalendarz();
+        try {
+            wydarzenia_tabela.setItems(kalendarz.pobierzWydarzenia(linkW));
+            ksiadzTabela.setItems(pobierzKsiezy(linkK));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void pokazMsze(String link) throws Exception {
          lista = pobierzMsze(link);
 
@@ -76,9 +129,19 @@ public class MszaInfo implements Initializable {
         }
 
     }
+
 public void pokaz()
 {
-    System.out.println(lista.get(mszaCombo.getSelectionModel().getSelectedIndex()).id );
+    //System.out.println(lista.get(mszaCombo.getSelectionModel().getSelectedIndex()).id );
+    boolean isEmpty = mszaCombo.getSelectionModel().isEmpty();
+    if(!isEmpty) {
+        String id = String.valueOf(lista.get(mszaCombo.getSelectionModel().getSelectedIndex()).id);
+        try {
+            tableViewPopulate("http://localhost:3000/kalendarz/wydarzeniamsza/" + id, "http://localhost:3000/ksieza/msza/" + id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 
     @FXML
@@ -127,12 +190,26 @@ public void pokaz()
                         super.updateItem(item, empty);
                         setDisable(item.isAfter(maxDate) || item.isBefore(minDate));
                     }});
-        try {
-            pokazMsze("http://localhost:3000/kalendarz/mszedzis/2022/04/03");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
+        tableViewSetup();
+
+
+
+    }
+
+    public void pokazMsze(ActionEvent actionEvent) throws Exception {
+
+
+        mszaCombo.getSelectionModel().clearSelection();
+        mszaCombo.getItems().clear();
+        LocalDate data = datePicker.getValue();
+
+        int dzien = data.getDayOfMonth();
+        int miesiac = data.getMonthValue();
+        int rok = data.getYear();
+
+        String link="http://localhost:3000/kalendarz/mszedzis/"+rok+"/"+miesiac+"/"+dzien;
+        pokazMsze(link);
     }
 }
