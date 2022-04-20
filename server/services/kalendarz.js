@@ -26,9 +26,50 @@ async function getMszeToday(day, month, year){
     return rows;
 }
 
+async function getWydarzeniaMsza(id){
+
+    const rows = await db.query(
+        "SELECT msza.godzina,wydarzenia.nazwa, wydarzenia.typ, wydarzenia.opis FROM `msza_wydarzenia` " +
+        "join msza on msza_wydarzenia.msza=msza.id join wydarzenia on wydarzenia.id=msza_wydarzenia.wydarzenia where msza.id="+id+";"
+    );
+    return rows;
+}
+
+async function addWydarzenie(nazwa,typ,opis){
+
+    const result = await db.query(
+        'INSERT INTO wydarzenia (id,nazwa,typ,opis) VALUES (null,"'+nazwa+'","'+typ+'","'+opis+'");'
+    )
+
+    let message = 'Błąd podczas dodawania wydarzenia';
+
+    if (result.affectedRows) {
+        message = 'Wydarzenie pomyślnie dodane';
+    }
+
+    return {message};
+}
+
+async function addWydarzenieMsza(msza_id,wydarzenie_id){
+
+    const result = await db.query(
+        'INSERT INTO msza_wydarzenia (msza,wydarzenia) VALUES ('+msza_id+','+wydarzenie_id+');'
+    )
+
+    let message = 'Błąd podczas przypisywania wydarzenia do mszy';
+
+    if (result.affectedRows) {
+        message = 'Wydarzenie pomyślnie przypisane';
+    }
+
+    return {message};
+}
 
 module.exports = {
     getZakresKalendarz,
     getWydarzeniaKalendarz,
-    getMszeToday
+    getMszeToday,
+    getWydarzeniaMsza,
+    addWydarzenie,
+    addWydarzenieMsza
 }
