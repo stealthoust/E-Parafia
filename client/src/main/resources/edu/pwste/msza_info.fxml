@@ -5,18 +5,17 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaInfo">
+<AnchorPane prefHeight="463.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaInfo">
    <children>
-      <DatePicker layoutX="16.0" layoutY="92.0" prefHeight="30.0" prefWidth="294.0" promptText="Wybierz datę" />
-      <ComboBox layoutX="336.0" layoutY="92.0" prefHeight="30.0" prefWidth="277.0" promptText="Wybierz mszę" />
-      <TableView layoutX="16.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
-      <TableView layoutX="269.0" layoutY="166.0" prefHeight="200.0" prefWidth="337.0" />
+      <DatePicker fx:id="datePicker" layoutX="16.0" layoutY="92.0" onAction="#pokazMsze" prefHeight="30.0" prefWidth="294.0" promptText="Wybierz datę" />
+      <ComboBox fx:id="mszaCombo" layoutX="336.0" layoutY="92.0" onAction="#pokaz" prefHeight="30.0" prefWidth="277.0" promptText="Wybierz mszę" />
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
@@ -48,5 +47,18 @@
             <RowConstraints />
          </rowConstraints>
       </GridPane>
+      <TableView fx:id="wydarzenia_tabela" layoutX="16.0" layoutY="291.0" prefHeight="140.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="colGodzina" prefWidth="102.0" text="Godzina" />
+            <TableColumn fx:id="colNazwa" prefWidth="156.0" text="Nazwa" />
+            <TableColumn fx:id="colTyp" minWidth="0.0" prefWidth="135.0" text="Typ" />
+            <TableColumn fx:id="colOpis" prefWidth="206.0" text="Opis" />
+         </columns>
+      </TableView>
+      <TableView fx:id="ksiadzTabela" layoutX="16.0" layoutY="149.0" prefHeight="118.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="colImie" prefWidth="279.0" text="Imię" />
+            <TableColumn fx:id="colNazwisko" prefWidth="320.0" text="Nazwisko" />
+         </columns></TableView>
    </children>
 </AnchorPane>

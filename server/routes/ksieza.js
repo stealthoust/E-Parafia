@@ -21,4 +21,13 @@ router.get('/:id', async function(req, res, next) {
     }
 });
 
+router.get('/msza/:id', async function(req, res, next) {
+    try {
+        res.json(await ksieza.getKsiezaMsza(req.params.id));
+    } catch (err) {
+        console.error(`Error while getting programming languages `, err.message);
+        next(err);
+    }
+});
+
 module.exports = router;
