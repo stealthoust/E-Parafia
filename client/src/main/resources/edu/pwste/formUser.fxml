@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormUser">
+<AnchorPane prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormUser">
    <children>
       <TextField fx:id="txtName" layoutX="107.0" layoutY="139.0" promptText="Podaj imię" />
       <TextField fx:id="txtNazwisko" layoutX="332.0" layoutY="139.0" promptText="Podaj nazwisko" />

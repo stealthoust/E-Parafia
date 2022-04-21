@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaDodaj">
+<AnchorPane prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaDodaj">
    <children>
       <DatePicker layoutX="7.0" layoutY="94.0" prefHeight="39.0" prefWidth="284.0" promptText="Wybierz datę" />
       <ComboBox layoutX="314.0" layoutY="90.0" prefHeight="39.0" prefWidth="284.0" promptText="Wybierz mszę" />
