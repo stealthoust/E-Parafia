@@ -114,6 +114,11 @@ public class Kalendarz implements Initializable {
         App.setRoot("formEvent");
     }
     @FXML
+    private void switchToFormularzMsza() throws IOException {
+        formularzBtn.hide();
+        App.setRoot("formMsza");
+    }
+    @FXML
     private void switchToKalendarz() throws IOException {
         App.setRoot("kalendarz");
     }

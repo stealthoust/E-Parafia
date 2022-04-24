@@ -32,6 +32,7 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#switchToFormularzUser" text="Dodaj parafianina" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToFormularzEvent" text="Dodaj wydarzenie" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToFormularzMsza" text="Dodaj msze" />
                </items>
             </MenuButton>
             <MenuButton fx:id="mszaBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Msza" GridPane.columnIndex="3" GridPane.rowIndex="1">
