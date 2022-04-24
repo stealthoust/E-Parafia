@@ -30,6 +30,11 @@ public class FormUser {
         App.setRoot("formEvent");
     }
     @FXML
+    private void switchToFormularzMsza() throws IOException {
+        formularzBtn.hide();
+        App.setRoot("formMsza");
+    }
+    @FXML
     private void switchToKalendarz() throws IOException {
         App.setRoot("kalendarz");
     }
@@ -52,4 +57,5 @@ public class FormUser {
         mszaBtn.hide();
         App.setRoot("msza_info");
     }
+
 }

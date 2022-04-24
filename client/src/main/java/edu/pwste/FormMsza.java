@@ -5,12 +5,8 @@ import javafx.scene.control.MenuButton;
 
 import java.io.IOException;
 
-public class FormEvent {
-
-
-
-    public MenuButton mszaBtn;
-    public MenuButton formularzBtn;
+public class FormMsza {
+    public MenuButton mszaBtn,formularzBtn;
 
     @FXML
     private void switchToPrimary() throws IOException {
