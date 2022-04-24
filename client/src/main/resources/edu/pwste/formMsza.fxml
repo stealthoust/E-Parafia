@@ -73,7 +73,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="btnDodaj" layoutX="25.0" layoutY="221.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
+      <Button fx:id="btnDodaj" layoutX="25.0" layoutY="221.0" mnemonicParsing="false" onAction="#dodajMsze" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
@@ -109,7 +109,7 @@
       <TextField fx:id="cmtmTxt" alignment="CENTER" layoutX="256.0" layoutY="422.0" prefHeight="26.0" prefWidth="98.0" promptText="Minuty" />
       <TextField fx:id="cmngTxt" alignment="CENTER" layoutX="448.0" layoutY="379.0" prefHeight="26.0" prefWidth="98.0" promptText="Godzina" />
       <TextField fx:id="cmnmTxt" alignment="CENTER" layoutX="448.0" layoutY="422.0" prefHeight="26.0" prefWidth="98.0" promptText="Minuty" />
-      <Button fx:id="btnDodajcm" layoutX="21.0" layoutY="470.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
+      <Button fx:id="btnDodajcm" layoutX="21.0" layoutY="470.0" mnemonicParsing="false" onAction="#dodajMszeMiesiac" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
