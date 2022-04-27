@@ -8,8 +8,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -112,6 +118,7 @@ public class MszaEvent implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         wypiszWydarzenia();
+
     }
 
 
@@ -131,6 +138,69 @@ public class MszaEvent implements Initializable {
     }
 
     public void Show(MouseEvent mouseEvent) {
-        System.out.println(lista.get(wydarzenia_tabela.getSelectionModel().getSelectedIndex()).id);
+
+
+        //if(wydarzenia_tabela.getSelectionModel().getSelectedIndex() != -1) System.out.println(wydarzenia_tabela.getSelectionModel().getSelectedItem());
+    }
+
+    public void przypiszWydarzenie(ActionEvent actionEvent) {
+        wydarzenia wyd= (wydarzenia) wydarzenia_tabela.getSelectionModel().getSelectedItem();
+
+        if(wydarzenia_tabela.getSelectionModel().getSelectedIndex() != -1 && combo_msza.getSelectionModel().getSelectedIndex() != -1)
+        {
+            var url = "http://localhost:3000/wydarzenia/addmw";
+            var urlParameters = "msza=" + lista.get(combo_msza.getSelectionModel().getSelectedIndex()).id + "&wydarzenie=" + (wydarzenia_tabela.getSelectionModel().getSelectedIndex() + 1);
+            byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
+            HttpURLConnection con = null;
+            try {
+                var myurl = new URL(url);
+                con = (HttpURLConnection) myurl.openConnection();
+                con.setDoOutput(true);
+                con.setRequestMethod("POST");
+                con.setRequestProperty("User-Agent", "Java client");
+                con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                try (var wr = new DataOutputStream(con.getOutputStream())) {
+                    wr.write(postData);
+                    if (con.getResponseMessage().equals("OK")) {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Pomyślnie przypisano");
+                        alert.setContentText("Wydarzenie zostało przypisane do mszy");
+
+                        kalendarz.setValue(null);
+                        combo_msza.getSelectionModel().clearSelection();
+                        combo_msza.getItems().clear();
+                        alert.showAndWait();
+                    }
+                }
+                StringBuilder content = null;
+                try (var br = new BufferedReader(
+                        new InputStreamReader(con.getInputStream()))) {
+                    String line;
+                    content = new StringBuilder();
+                    while ((line = br.readLine()) != null) {
+                        content.append(line);
+                        content.append(System.lineSeparator());
+                    }
+                } catch (IOException e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Błąd podczas dodawania przypisywania wydarzenia do mszy");
+                    alert.setContentText("To wydarzenie jest już przypisane do tej mszy");
+                    alert.showAndWait();
+                }
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+            } finally {
+                con.disconnect();
+            }
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd podczas przypisywania wydarzenia do mszy");
+            alert.setContentText("Nie wybrano wydarzenia lub mszy");
+            alert.showAndWait();
+        }
     }
 }
