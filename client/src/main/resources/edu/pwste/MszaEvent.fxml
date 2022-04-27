@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="447.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaEvent">
+<AnchorPane prefHeight="447.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.MszaEvent">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
          <columnConstraints>
@@ -48,7 +48,7 @@
       </GridPane>
       <DatePicker fx:id="kalendarz" layoutX="25.0" layoutY="105.0" onAction="#pokazMsze" prefHeight="37.0" prefWidth="207.0" promptText="Wybierz datę" />
       <ComboBox fx:id="combo_msza" layoutX="336.0" layoutY="105.0" prefHeight="37.0" prefWidth="207.0" />
-      <Button fx:id="btn" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="600.0" text="Dodaj" />
+      <Button fx:id="btn" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#przypiszWydarzenie" prefHeight="30.0" prefWidth="600.0" text="Dodaj" />
       <TableView fx:id="wydarzenia_tabela" layoutX="14.0" layoutY="165.0" onMouseClicked="#Show" prefHeight="210.0" prefWidth="600.0">
          <columns>
             <TableColumn fx:id="colNazwa" prefWidth="156.0" text="Nazwa" />
