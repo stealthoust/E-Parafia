@@ -45,7 +45,7 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="btn" layoutX="399.0" layoutY="318.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="Dodaj" />
+      <Button fx:id="btn" layoutX="399.0" layoutY="318.0" mnemonicParsing="false" onAction="#przypiszMK" prefHeight="30.0" prefWidth="115.0" text="Dodaj" />
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
