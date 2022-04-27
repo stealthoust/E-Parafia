@@ -77,7 +77,7 @@ public class FormEvent {
 
     @FXML
     void addWydarzenie(ActionEvent event) {
-        var url = "http://localhost:3000/osoby/add";
+        var url = "http://localhost:3000/wydarzenia/add";
         var urlParameters = "nazwa="+txtNazwa.getText()+"&typ="+txtTyp.getText()+"&opis="+txtOpis.getText();
         byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
 
