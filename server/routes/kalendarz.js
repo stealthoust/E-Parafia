@@ -67,4 +67,19 @@ router.post('/addwydarzeniemsza/:idm/:idw', async function (req, res,next) {
     }
 
 });
+
+router.post('/addmszaksiadz', async function (req, res,next) {
+
+
+    try {
+
+        res.json(await kalendarz.addMszaKsiadz(req.body.msza, req.body.ksiadz));
+
+    } catch (err) {
+        console.error(`Error while getting programming languages `, err.message);
+        next(err);
+
+    }
+
+});
 module.exports = router;
