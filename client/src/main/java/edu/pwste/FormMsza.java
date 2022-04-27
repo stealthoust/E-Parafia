@@ -7,8 +7,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class FormMsza implements Initializable {
@@ -242,7 +249,60 @@ public class FormMsza implements Initializable {
     public void dodajMsze(ActionEvent actionEvent) {
 
         System.out.println(oneMszaValidate());
+        System.out.println("dupa");
+        System.out.println(kalendarz.getValue());
+        userDodaj();
     }
+
+    void userDodaj() {
+        var url = "http://localhost:3000/msze/add";
+        var urlParameters = "data="+kalendarz.getValue()+"&godzina="+hTxt.getText()+":"+mTxt.getText()+"&typ=Za Adasia"; // nie ma opcji na typ mszy -> do poprawki adas
+        byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
+
+        HttpURLConnection con = null;
+        try {
+
+            var myurl = new URL(url);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setDoOutput(true);
+            con.setRequestMethod("POST");
+            con.setRequestProperty("User-Agent", "Java client");
+            con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            try (var wr = new DataOutputStream(con.getOutputStream())) {
+
+                wr.write(postData);
+            }
+
+            StringBuilder content = null;
+
+            try (var br = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+
+                String line;
+                content = new StringBuilder();
+
+                while ((line = br.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println(content.toString());
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+
+            con.disconnect();
+        }
+    }
+
 
     public void dodajMszeMiesiac(ActionEvent actionEvent) {
         System.out.println(fewMszaValidate());
