@@ -240,6 +240,7 @@ public class FormMsza implements Initializable {
     }
 
     public void dodajMsze(ActionEvent actionEvent) {
+
         System.out.println(oneMszaValidate());
     }
 

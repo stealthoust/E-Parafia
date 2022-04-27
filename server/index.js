@@ -7,6 +7,7 @@ const osobyRouter = require("./routes/osoby");
 const kalendarzRouter = require("./routes/kalendarz");
 const ksiezaRouter = require("./routes/ksieza");
 const wydarzeniaRouter = require("./routes/wydarzenia");
+const mszeRouter = require("./routes/msze");
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use("/osoby", osobyRouter);
 app.use("/kalendarz", kalendarzRouter);
 app.use("/ksieza", ksiezaRouter);
 app.use("/wydarzenia", wydarzeniaRouter);
+app.use("/msze", mszeRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
