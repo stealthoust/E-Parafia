@@ -2,6 +2,7 @@ package edu.pwste;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.io.BufferedReader;
@@ -12,8 +13,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ResourceBundle;
 
-public class FormUser {
+public class FormUser implements Initializable {
 
     public TableView table_view;
     public MenuButton mszaBtn;
@@ -26,6 +28,9 @@ public class FormUser {
     public Button btnZatwierdz;
     public MenuButton formularzBtn;
 
+    private void setCombo_ksiadz() {
+        comboKsiadz.getItems().addAll("Mirosław Mateja","Piotr Krzysik","Bernard Guzy","Marcin Kowalik","Konstanty Sepulak");
+    }
 
     @FXML
     private void switchToPrimary() throws IOException {
@@ -121,4 +126,8 @@ public class FormUser {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setCombo_ksiadz();
+    }
 }

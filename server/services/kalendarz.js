@@ -65,11 +65,27 @@ async function addWydarzenieMsza(msza_id,wydarzenie_id){
     return {message};
 }
 
+async function addMszaKsiadz(msza_id,ksiadz_id){
+
+    const result = await db.query(
+        'INSERT INTO ksiadz_msza (msza,ksiadz) VALUES ('+msza_id+','+ksiadz_id+');'
+    )
+
+    let message = 'Błąd podczas przypisywania księdza do mszy';
+
+    if (result.affectedRows) {
+        message = 'Ksiądz pomyślnie przypisany do mszy';
+    }
+
+    return {message};
+}
+
 module.exports = {
     getZakresKalendarz,
     getWydarzeniaKalendarz,
     getMszeToday,
     getWydarzeniaMsza,
     addWydarzenie,
-    addWydarzenieMsza
+    addWydarzenieMsza,
+    addMszaKsiadz
 }
