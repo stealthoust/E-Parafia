@@ -159,65 +159,65 @@ public class FormMsza implements Initializable {
 
     private void inputSetup()
     {
-        cmmTxt.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    cmmTxt.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
-
-        cmrTxt.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    cmrTxt.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
-
-        cmtgTxt.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    cmtgTxt.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
-
-        cmtmTxt.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    cmtmTxt.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
-
-        cmngTxt.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    cmngTxt.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
-
-        cmnmTxt.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    cmnmTxt.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
+//        cmmTxt.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    cmmTxt.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
+//
+//        cmrTxt.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    cmrTxt.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
+//
+//        cmtgTxt.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    cmtgTxt.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
+//
+//        cmtmTxt.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    cmtmTxt.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
+//
+//        cmngTxt.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    cmngTxt.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
+//
+//        cmnmTxt.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    cmnmTxt.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
 
         mTxt.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -303,8 +303,10 @@ public class FormMsza implements Initializable {
         }
     }
 
-
+    /*
     public void dodajMszeMiesiac(ActionEvent actionEvent) {
         System.out.println(fewMszaValidate());
     }
+
+     */
 }
