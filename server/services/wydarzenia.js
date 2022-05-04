@@ -18,6 +18,29 @@ async function addWydarzenie(nazwa, typ, opis){
     return {message};
 }
 
+async function addWydarzenieMsza(msza_id,wydarzenie_id_){
+
+    const result = await db.query(
+        'INSERT INTO msza_wydarzenia (msza,wydarzenia) VALUES ("'+msza_id+'","'+wydarzenie_id_+'");'
+    )
+
+    let message = 'Błąd podczas przypisywania wydarzenia do mszy';
+
+    if (result.affectedRows) {
+        message = 'Wydarzenie przypisane pomyslnie';
+    }
+
+    return {message};
+}
+async function getWydarzenia(){
+
+    const rows = await db.query(
+        "SELECT * FROM `wydarzenia`;"
+    );
+    return rows;
+}
 module.exports = {
-    addWydarzenie
+    addWydarzenie,
+    getWydarzenia,
+    addWydarzenieMsza
 }
