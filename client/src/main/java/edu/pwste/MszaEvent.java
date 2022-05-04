@@ -72,7 +72,6 @@ public class MszaEvent implements Initializable {
         tableViewPopulate(url);
 
     }
-
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
@@ -119,6 +118,7 @@ public class MszaEvent implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         wypiszWydarzenia();
+
     }
 
 
@@ -141,7 +141,6 @@ public class MszaEvent implements Initializable {
 
 
         //if(wydarzenia_tabela.getSelectionModel().getSelectedIndex() != -1) System.out.println(wydarzenia_tabela.getSelectionModel().getSelectedItem());
-
     }
 
     public void przypiszWydarzenie(ActionEvent actionEvent) {
@@ -205,4 +204,3 @@ public class MszaEvent implements Initializable {
         }
     }
 }
-
