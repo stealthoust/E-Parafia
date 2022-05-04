@@ -5,6 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -14,6 +15,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.PrimaryController">
    <children>
+      <Text layoutX="136.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DZISIEJESZE WYDARZENIA: " wrappingWidth="399.13671875">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Text>
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="82.0" />
@@ -23,7 +29,10 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
          </columnConstraints>
          <children>
-            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="60.0" prefWidth="147.0" text="Strona Główna" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="60.0" prefWidth="147.0" text="Strona Główna" textAlignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKalendarz" prefHeight="60.0" prefWidth="147.0" text="Kalendarz" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKsiegaOsob" prefHeight="60.0" prefWidth="147.0" text="Księga osób" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <MenuButton fx:id="formularzBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Formularz" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -54,11 +63,9 @@
             <TableColumn fx:id="colOpis" prefWidth="187.0" text="Opis" />
          </columns>
       </TableView>
-      <Text layoutX="154.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DZISIEJESZE WYDARZENIA: " wrappingWidth="318.13671875">
-         <font>
-            <Font name="Calibri Bold" size="24.0" />
-         </font>
-      </Text>
    </children>
+   <effect>
+      <Blend />
+   </effect>
    
 </AnchorPane>

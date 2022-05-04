@@ -13,12 +13,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormUser">
+<AnchorPane prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormUser">
    <children>
-      <TextField fx:id="txtName" layoutX="107.0" layoutY="139.0" promptText="Podaj imię" />
+      <TextField fx:id="txtName" layoutX="79.0" layoutY="139.0" prefHeight="25.0" prefWidth="191.0" promptText="Podaj imię" />
       <TextField fx:id="txtNazwisko" layoutX="332.0" layoutY="139.0" promptText="Podaj nazwisko" />
       <DatePicker fx:id="dateDob" layoutX="79.0" layoutY="251.0" prefHeight="26.0" prefWidth="191.0" promptText="Podaj datę urodzenia" />
-      <TextField fx:id="txtMiejscowosc" layoutX="332.0" layoutY="251.0" promptText="Podaj miejscowość" />
+      <TextField fx:id="txtMiejscowosc" layoutX="332.0" layoutY="251.0" prefHeight="25.0" prefWidth="152.0" promptText="Podaj miejscowość" />
       <ComboBox fx:id="comboKsiadz" layoutX="79.0" layoutY="350.0" prefHeight="27.0" prefWidth="191.0" promptText="Wybierdz księdza" />
       <Button fx:id="btnZatwierdz" layoutX="332.0" layoutY="343.0" mnemonicParsing="false" onAction="#userDodaj" prefHeight="41.0" prefWidth="152.0" text="Zatwierdź">
          <font>
@@ -59,7 +59,7 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="66.0" />
          </columnConstraints>
          <children>
-            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="60.0" prefWidth="147.0" text="Strona Główna" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="203.0" prefWidth="115.0" text="Strona Główna" textAlignment="CENTER" GridPane.rowIndex="1" />
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKalendarz" prefHeight="60.0" prefWidth="147.0" text="Kalendarz" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToKsiegaOsob" prefHeight="60.0" prefWidth="147.0" text="Księga osób" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <MenuButton fx:id="formularzBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Formularz" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -68,6 +68,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#switchToFormularzEvent" text="Dodaj wydarzenie" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToFormularzMsza" text="Dodaj msze" />
                </items>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
             </MenuButton>
             <MenuButton fx:id="mszaBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Msza" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <items>

@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -26,6 +28,7 @@ public class FormUser implements Initializable {
     @FXML
     public ComboBox comboKsiadz;
     public Button btnZatwierdz;
+    @FXML
     public MenuButton formularzBtn;
 
     private void setCombo_ksiadz() {
@@ -128,6 +131,9 @@ public class FormUser implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         setCombo_ksiadz();
+        formularzBtn.setFont(Font.font(20));
+        //formularzBtn.setText("test");
     }
 }
