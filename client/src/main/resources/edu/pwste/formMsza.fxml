@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="549.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormMsza">
+<AnchorPane prefHeight="549.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pwste.FormMsza">
    <children>
       <GridPane layoutX="15.0" layoutY="14.0" prefHeight="52.0" prefWidth="600.0">
          <columnConstraints>
@@ -47,69 +46,33 @@
             <RowConstraints />
          </rowConstraints>
       </GridPane>
-      <DatePicker fx:id="kalendarz" layoutX="31.0" layoutY="152.0" promptText="Wybierz dzien" />
-      <TextField fx:id="hTxt" layoutX="255.0" layoutY="152.0" promptText="Podaj godzine">
+      <DatePicker fx:id="kalendarz" layoutX="31.0" layoutY="238.0" promptText="Wybierz dzien" />
+      <TextField fx:id="hTxt" layoutX="255.0" layoutY="238.0" promptText="Podaj godzine">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label alignment="CENTER" layoutX="255.0" layoutY="106.0" prefHeight="26.0" prefWidth="152.0" text="Godzina">
+      <Label alignment="CENTER" layoutX="255.0" layoutY="192.0" prefHeight="26.0" prefWidth="152.0" text="Godzina">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="443.0" layoutY="106.0" prefHeight="26.0" prefWidth="152.0" text="Minuty">
+      <Label alignment="CENTER" layoutX="443.0" layoutY="192.0" prefHeight="26.0" prefWidth="152.0" text="Minuty">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="31.0" layoutY="106.0" prefHeight="26.0" prefWidth="180.0" text="Data">
+      <Label alignment="CENTER" layoutX="31.0" layoutY="192.0" prefHeight="26.0" prefWidth="180.0" text="Data">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="mTxt" layoutX="443.0" layoutY="152.0" promptText="Podaj minuty">
+      <TextField fx:id="mTxt" layoutX="443.0" layoutY="238.0" promptText="Podaj minuty">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="btnDodaj" layoutX="25.0" layoutY="221.0" mnemonicParsing="false" onAction="#dodajMsze" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Button>
-      <Label alignment="CENTER" layoutX="21.0" layoutY="289.0" prefHeight="41.0" prefWidth="581.0" text="Dodaj msze na cały miesiąc">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="25.0" layoutY="341.0" prefHeight="26.0" prefWidth="60.0" text="Miesiąc">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="134.0" layoutY="341.0" prefHeight="26.0" prefWidth="60.0" text="Rok">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="225.0" layoutY="341.0" prefHeight="26.0" prefWidth="160.0" text="Godz. i min. w tygodniu">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="407.0" layoutY="341.0" prefHeight="26.0" prefWidth="180.0" text="Godz. i min. w niedziele">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="cmmTxt" alignment="CENTER" layoutX="25.0" layoutY="379.0" prefHeight="26.0" prefWidth="60.0" promptText="Miesiac" />
-      <TextField fx:id="cmrTxt" alignment="CENTER" layoutX="134.0" layoutY="379.0" prefHeight="26.0" prefWidth="60.0" promptText="Rok" />
-      <TextField fx:id="cmtgTxt" alignment="CENTER" layoutX="256.0" layoutY="379.0" prefHeight="26.0" prefWidth="98.0" promptText="Godzina" />
-      <TextField fx:id="cmtmTxt" alignment="CENTER" layoutX="256.0" layoutY="422.0" prefHeight="26.0" prefWidth="98.0" promptText="Minuty" />
-      <TextField fx:id="cmngTxt" alignment="CENTER" layoutX="448.0" layoutY="379.0" prefHeight="26.0" prefWidth="98.0" promptText="Godzina" />
-      <TextField fx:id="cmnmTxt" alignment="CENTER" layoutX="448.0" layoutY="422.0" prefHeight="26.0" prefWidth="98.0" promptText="Minuty" />
-      <Button fx:id="btnDodajcm" layoutX="21.0" layoutY="470.0" mnemonicParsing="false" onAction="#dodajMszeMiesiac" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
+      <Button fx:id="btnDodaj" layoutX="25.0" layoutY="352.0" mnemonicParsing="false" onAction="#dodajMsze" prefHeight="41.0" prefWidth="581.0" text="Dodaj">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
