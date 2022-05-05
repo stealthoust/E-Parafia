@@ -251,7 +251,10 @@ public class FormMsza implements Initializable {
         System.out.println(oneMszaValidate());
         System.out.println("dupa");
         System.out.println(kalendarz.getValue());
-        userDodaj();
+        if(oneMszaValidate()){
+            userDodaj();
+        }
+
     }
 
     void userDodaj() {
@@ -303,10 +306,10 @@ public class FormMsza implements Initializable {
         }
     }
 
-    /*
+
     public void dodajMszeMiesiac(ActionEvent actionEvent) {
         System.out.println(fewMszaValidate());
     }
 
-     */
+
 }
