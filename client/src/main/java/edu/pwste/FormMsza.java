@@ -259,7 +259,7 @@ public class FormMsza implements Initializable {
 
     void userDodaj() {
         var url = "http://localhost:3000/msze/add";
-        var urlParameters = "data="+kalendarz.getValue()+"&godzina="+hTxt.getText()+":"+mTxt.getText()+"&typ=Za Adasia"; // nie ma opcji na typ mszy -> do poprawki adas
+        var urlParameters = "data="+kalendarz.getValue()+"&godzina="+hTxt.getText()+":"+mTxt.getText()+"&typ=Dzienna"; // nie ma opcji na typ mszy -> do poprawki adas
         byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
 
         HttpURLConnection con = null;

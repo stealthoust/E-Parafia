@@ -132,7 +132,7 @@ public class PrimaryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         wypiszWydarzenia();
-        System.out.println(rok +" "+miesiac+" "+dzien);
+
     }
 
 }

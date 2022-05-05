@@ -90,7 +90,13 @@ public class FormEvent {
         }
         return true;
     }
-
+@FXML
+private void wyczysc()
+{
+    txtNazwa.setText("");
+    txtOpis.setText("");
+    txtTyp.setText("");
+}
     void sendreq(){
         var url = "http://localhost:3000/wydarzenia/add";
         var urlParameters = "nazwa="+txtNazwa.getText()+"&typ="+txtTyp.getText()+"&opis="+txtOpis.getText();
@@ -110,6 +116,13 @@ public class FormEvent {
             try (var wr = new DataOutputStream(con.getOutputStream())) {
 
                 wr.write(postData);
+                if (con.getResponseMessage().equals("OK")) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Pomyślnie dodano");
+                    alert.setContentText("Wydarzenie pomyslnie dodane");
+                    alert.showAndWait();
+                    wyczysc();
+                }
             }
 
             StringBuilder content = null;
@@ -128,7 +141,7 @@ public class FormEvent {
                 e.printStackTrace();
             }
 
-            System.out.println(content.toString());
+           wyczysc();
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -138,7 +151,7 @@ public class FormEvent {
 
             con.disconnect();
         }
-        System.out.println(txtNazwa.getText());
+
 
     }
 

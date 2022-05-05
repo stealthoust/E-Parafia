@@ -76,6 +76,6 @@
          </font>
       </TextField>
       <Button fx:id="addBtn" layoutX="15.0" layoutY="426.0" mnemonicParsing="false" onAction="#addWydarzenie" prefHeight="32.0" prefWidth="600.0" text="Dodaj" />
-      <Button fx:id="clearBtn" layoutX="15.0" layoutY="386.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="600.0" text="Wyczyść" />
+      <Button fx:id="clearBtn" layoutX="15.0" layoutY="386.0" mnemonicParsing="false" onAction="#wyczysc" prefHeight="32.0" prefWidth="600.0" text="Wyczyść" />
    </children>
 </AnchorPane>
