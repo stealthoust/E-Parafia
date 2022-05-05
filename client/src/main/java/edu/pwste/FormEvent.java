@@ -2,6 +2,7 @@ package edu.pwste;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 
@@ -75,8 +76,22 @@ public class FormEvent {
         App.setRoot("msza_info");
     }
 
-    @FXML
-    void addWydarzenie(ActionEvent event) {
+    private boolean wydarzenieValidate()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+
+        if( txtNazwa.getText().equals("")|| txtOpis.getText().equals("")|| txtTyp.getText().equals(""))
+        {
+            alert.setTitle("Błąd podczas dodawania wydarzenia");
+            alert.setHeaderText("Błąd");
+            alert.setContentText("Żadne z pól nie może być puste!");
+            alert.showAndWait();
+            return false;
+        }
+        return true;
+    }
+
+    void sendreq(){
         var url = "http://localhost:3000/wydarzenia/add";
         var urlParameters = "nazwa="+txtNazwa.getText()+"&typ="+txtTyp.getText()+"&opis="+txtOpis.getText();
         byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
@@ -124,5 +139,13 @@ public class FormEvent {
             con.disconnect();
         }
         System.out.println(txtNazwa.getText());
+
+    }
+
+    @FXML
+    void addWydarzenie(ActionEvent event) {
+        if(wydarzenieValidate()){
+            sendreq();
+        }
     }
 }

@@ -78,8 +78,22 @@ public class FormUser implements Initializable {
         App.setRoot("msza_info");
     }
 
-    @FXML
-    void userDodaj(ActionEvent event) {
+    private boolean userValidate()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+
+        if( txtName.getText().equals("")|| txtNazwisko.getText().equals("")|| txtMiejscowosc.getText().equals(""))
+        {
+            alert.setTitle("Błąd podczas dodawania Osoby");
+            alert.setHeaderText("Błąd");
+            alert.setContentText("Żadne z pól nie może być puste!");
+            alert.showAndWait();
+            return false;
+        }
+        return true;
+    }
+
+    void sendreq(){
         var url = "http://localhost:3000/osoby/add";
         var urlParameters = "imie="+txtName.getText()+"&nazwisko="+txtNazwisko.getText()+"&dt_urodzenia="+dateDob.getValue().toString()+"&miejscowosc="+txtMiejscowosc.getText()+"&id_ksiedza=1";
         byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
@@ -125,6 +139,13 @@ public class FormUser implements Initializable {
         } finally {
 
             con.disconnect();
+        }
+    }
+
+    @FXML
+    void userDodaj(ActionEvent event) {
+        if(userValidate()){
+            sendreq();
         }
     }
 
